@@ -14,8 +14,24 @@ def atm_menu(name):
 
 
 print("          === Automated Teller Machine ===          ")
-name = input("Enter name to register: ")
-pin = input("Enter PIN: ")
+while True:
+    name = input("Enter name to register: ")
+    if len(name) > 10:
+        print("The maximum length is 10 characters.")
+        continue
+    elif len(name) == 0:
+        print("You must enter a name.")
+        continue
+    else:
+        break
+
+while True:
+    pin = input("Enter PIN: ")
+    if len(pin) > 4 or len(pin) < 4:
+        print("PIN must contain 4 numbers")
+        continue
+    else:
+        break
 balance = 0
 print(f"{name} has been registered with a starting balance of {balance}.")
 
